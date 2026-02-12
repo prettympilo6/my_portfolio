@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}Projects — Nompilo{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='projects.css') }}" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Projects Hero -->
+<section class="projects-hero">
+    <div class="section-container">
+        <span class="section-label">Portfolio</span>
+        <h1 class="projects-hero-title">
+            Projects & <span class="gold-text">Work</span>
+        </h1>
+        <p class="projects-hero-subtitle">
+            A collection of academic projects and practical experiences that define my journey in ICT.
+        </p>
+    </div>
+</section>
+
+<!-- Projects Grid -->
+<section class="projects-section">
+    <div class="section-container">
+        <div class="projects-grid">
+            {% for project in data.projects %}
+            <article class="project-card">
+                <div class="project-card-header">
+                    <span class="project-card-number">0{{ loop.index }}</span>
+                    <span class="project-card-category">{{ project.category }}</span>
+                </div>
+                <div class="project-card-body">
+                    <h2 class="project-card-title">{{ project.title }}</h2>
+                    <p class="project-card-desc">{{ project.description }}</p>
+                </div>
+                <div class="project-card-footer">
+                    <div class="project-card-tags">
+                        {% for tech in project.tech %}
+                        <span class="tag">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                    {% if project.github %}
+                    <a href="{{ project.github }}" target="_blank" rel="noopener noreferrer" class="project-card-link" title="View on GitHub">
+                        <i class="fab fa-github"></i>
+                        <span>View Code</span>
+                    </a>
+                    {% else %}
+                    <div class="project-card-icon-placeholder">
+                        <i class="fas fa-folder"></i>
+                    </div>
+                    {% endif %}
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- More to Come -->
+<section class="coming-soon-section">
+    <div class="section-container">
+        <div class="coming-soon-card">
+            <div class="coming-soon-icon">
+                <i class="fas fa-hammer"></i>
+            </div>
+            <h3>More Projects in Progress</h3>
+            <p>I am actively building and refining new projects. Check back soon for updates — or reach out if you'd like to collaborate.</p>
+            <a href="{{ url_for('contact') }}" class="btn btn-outline">
+                <i class="fas fa-paper-plane"></i> Let's Collaborate
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

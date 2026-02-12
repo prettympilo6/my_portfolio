@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% block title %}About — Mpilonhle{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}" />
+{% endblock %}
+
+{% block content %}
+
+<!-- About Hero -->
+<section class="about-hero">
+    <div class="about-hero-container">
+        <div class="about-tag">
+            <span class="section-label">About Me</span>
+        </div>
+        <h1 class="about-hero-title">
+            Turning <em>complexity</em> into<br />
+            <span class="gold-text">clarity.</span>
+        </h1>
+    </div>
+    <div class="about-hero-line"></div>
+</section>
+
+<!-- Profile Section -->
+<section class="profile-section">
+    <div class="section-container profile-grid">
+
+        <div class="profile-card">
+            <div class="profile-initials">N</div>
+            <div class="profile-meta">
+                <p class="profile-name">Nompilo</p>
+                <p class="profile-role">ICT Graduate</p>
+                <div class="profile-badge">
+                    <i class="fas fa-circle-dot"></i> Open to Work
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-content">
+            <h2 class="profile-heading">Professional Summary</h2>
+            <p class="profile-text">{{ data.summary }}</p>
+
+            <div class="highlights">
+                <div class="highlight-item">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Junior Business Analyst</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>ICT Graduate — Business Analysis & Systems Dev</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>Web Systems & Facial Recognition Projects</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-building-columns"></i>
+                    <span>University Systems & Admin Support Experience</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="skills-section">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-label">Skills</span>
+            <h2 class="section-title">Core Competencies</h2>
+        </div>
+
+        <div class="skills-grid">
+            {% for skill_group in data.skills %}
+            <div class="skill-group">
+                <h3 class="skill-category">{{ skill_group.category }}</h3>
+                <ul class="skill-list">
+                    {% for skill in skill_group.skills %}
+                    <li class="skill-item">
+                        <i class="fas fa-chevron-right"></i>
+                        {{ skill }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Education Section -->
+<section class="education-section">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-label">Education</span>
+            <h2 class="section-title">Academic Background</h2>
+        </div>
+
+        {% for edu in data.education %}
+        <div class="edu-card">
+            <div class="edu-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="edu-content">
+                <div class="edu-header">
+                    <h3 class="edu-degree">{{ edu.degree }}</h3>
+                    <span class="edu-spec">{{ edu.specialisation }}</span>
+                </div>
+                <p class="edu-institution">
+                    <i class="fas fa-building-columns"></i> {{ edu.institution }}
+                </p>
+                <p class="edu-description">{{ edu.description }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

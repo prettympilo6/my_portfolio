@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% block title %}Mpilonhle — ICT Graduate & Business Analyst{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero" id="hero">
+    <div class="hero-bg-line line-1"></div>
+    <div class="hero-bg-line line-2"></div>
+    <div class="hero-bg-line line-3"></div>
+
+    <div class="hero-wrapper">
+        <div class="hero-container">
+            <div class="hero-tag">
+                <i class="fas fa-circle-dot"></i>
+                <span>Open to Opportunities</span>
+            </div>
+
+            <h1 class="hero-name">
+                <span class="name-line name-line--fade" data-delay="0.1">Hello, I am</span>
+                <span class="name-line name-primary" data-delay="0.3">Nompilo</span>
+            </h1>
+
+            <div class="hero-title-block">
+                <div class="title-bar"></div>
+                <p class="hero-title">{{ data.title }}</p>
+            </div>
+
+            <p class="hero-summary">
+                Bridging the gap between <em>business needs</em> and <em>technology solutions</em> — 
+                crafting systems that are efficient, practical, and built for real people.
+            </p>
+
+            <div class="hero-actions">
+                <a href="{{ url_for('projects') }}" class="btn btn-primary">
+                    <i class="fas fa-layer-group"></i> View My Work
+                </a>
+                <a href="{{ url_for('about') }}" class="btn btn-outline">
+                    <i class="fas fa-user"></i> About Me
+                </a>
+            </div>
+
+            <div class="hero-scroll">
+                <div class="scroll-line"></div>
+                <span>Scroll</span>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <!-- Profile Photo -->
+            <div class="profile-photo-container">
+                <div class="profile-photo">
+                    <img src="{{ url_for('static', filename='Nompilo.jpeg') }}" alt="Nompilo" />
+                    <div class="photo-border"></div>
+                </div>
+            </div>
+            
+            <!-- Floating Badges -->
+            <div class="floating-badge badge-1">
+                <i class="fas fa-code"></i> Systems Dev
+            </div>
+            <div class="floating-badge badge-2">
+                <i class="fas fa-chart-bar"></i> Business Analysis
+            </div>
+            <div class="floating-badge badge-3">
+                <i class="fas fa-graduation-cap"></i> ICT Graduate
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What I Do Section -->
+<section class="what-i-do" id="what-i-do">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-label">Expertise</span>
+            <h2 class="section-title">What I Bring</h2>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card card--animate" data-index="0">
+                <div class="card-icon">
+                    <i class="fas fa-magnifying-glass-chart"></i>
+                </div>
+                <h3 class="card-title">Business Analysis</h3>
+                <p class="card-text">Analysing organisational challenges, gathering requirements, and translating business needs into actionable ICT solutions.</p>
+            </div>
+
+            <div class="card card--animate" data-index="1">
+                <div class="card-icon">
+                    <i class="fas fa-sitemap"></i>
+                </div>
+                <h3 class="card-title">Systems Development</h3>
+                <p class="card-text">Designing and building web-based systems with a focus on user-centred design, efficiency, and scalability.</p>
+            </div>
+
+            <div class="card card--animate" data-index="2">
+                <div class="card-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3 class="card-title">ICT Support & Operations</h3>
+                <p class="card-text">Hands-on experience supporting university systems and administrative operations, ensuring seamless technology performance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects -->
+<section class="featured-projects">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-label">Portfolio</span>
+            <h2 class="section-title">Featured Work</h2>
+        </div>
+
+        <div class="project-list">
+            {% for project in data.projects %}
+            <div class="project-item">
+                <div class="project-number">0{{ loop.index }}</div>
+                <div class="project-info">
+                    <div class="project-category">{{ project.category }}</div>
+                    <h3 class="project-name">{{ project.title }}</h3>
+                    <p class="project-desc">{{ project.description }}</p>
+                    <div class="project-tags">
+                        {% for tech in project.tech %}
+                        <span class="tag">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="projects-cta">
+            <a href="{{ url_for('projects') }}" class="btn btn-primary">
+                View All Projects <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Strip -->
+<section class="cta-strip">
+    <div class="cta-container">
+        <div class="cta-text">
+            <h2>Let's build something together</h2>
+            <p>I'm actively seeking opportunities where I can contribute, learn, and grow.</p>
+        </div>
+        <a href="{{ url_for('contact') }}" class="btn btn-gold">
+            <i class="fas fa-paper-plane"></i> Get in Touch
+        </a>
+    </div>
+</section>
+
+{% endblock %}

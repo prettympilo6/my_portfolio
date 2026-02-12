@@ -1,0 +1,95 @@
+/* ===========================
+   ABOUT PAGE CSS — Light Theme
+   =========================== */
+
+.about-hero { padding: 160px 0 80px; background: var(--bg); }
+.about-hero-container { max-width: var(--container-max); margin: 0 auto; padding: 0 32px; }
+.about-tag { margin-bottom: 20px; animation: fadeSlideDown 0.8s ease forwards; }
+.about-hero-title { font-family: var(--font-display); font-size: clamp(2.6rem, 7vw, 6rem); font-weight: 300; color: var(--text-primary); line-height: 1.1; animation: fadeSlideUp 0.9s ease 0.2s both; }
+.about-hero-title em { font-style: italic; color: var(--text-muted); }
+.about-hero-line { height: 1px; background: linear-gradient(90deg, var(--gold), transparent); margin-top: 60px; opacity: 0.3; }
+
+/* --- Profile Section --- */
+.profile-section { padding: 80px 0 var(--section-pad); background: var(--bg); }
+.profile-grid { display: grid; grid-template-columns: 280px 1fr; gap: 80px; align-items: start; }
+
+.profile-card {
+    position: sticky; top: 100px;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: var(--shadow-card);
+}
+.profile-initials { width: 100px; height: 100px; background: rgba(168, 121, 42, 0.08); border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 3rem; font-weight: 300; color: var(--gold); margin: 0 auto 20px; }
+.profile-name { font-family: var(--font-display); font-size: 1.6rem; font-weight: 400; color: var(--text-primary); margin-bottom: 6px; }
+.profile-role { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 20px; }
+.profile-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px; background: rgba(168, 121, 42, 0.07); border: 1px solid rgba(168, 121, 42, 0.22); border-radius: 50px; font-size: 0.75rem; color: var(--gold); }
+.profile-badge i { font-size: 0.45rem; }
+
+.profile-heading { font-family: var(--font-display); font-size: 2rem; font-weight: 400; color: var(--text-primary); margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid var(--border-subtle); }
+.profile-text { font-size: 0.96rem; line-height: 1.95; color: var(--text-secondary); margin-bottom: 40px; }
+
+.highlights { display: flex; flex-direction: column; gap: 12px; }
+.highlight-item {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 18px;
+    background: var(--bg-mid);
+    border: 1px solid var(--border-subtle);
+    border-left: 3px solid var(--gold);
+    border-radius: 3px;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    transition: all var(--transition);
+}
+.highlight-item i { color: var(--gold); font-size: 0.85rem; flex-shrink: 0; }
+.highlight-item:hover { background: rgba(168, 121, 42, 0.05); color: var(--text-primary); transform: translateX(4px); }
+
+/* --- Skills Section --- */
+.skills-section { padding: var(--section-pad) 0; background: var(--bg-mid); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
+.skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+.skill-group {
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    padding: 34px;
+    border-radius: 4px;
+    box-shadow: var(--shadow-card);
+    transition: all var(--transition);
+}
+.skill-group:hover { border-color: rgba(168, 121, 42, 0.2); transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.skill-category { font-size: 0.78rem; font-weight: 500; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle); }
+.skill-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.skill-item { display: flex; align-items: center; gap: 12px; font-size: 0.88rem; color: var(--text-secondary); transition: color var(--transition); }
+.skill-item i { font-size: 0.6rem; color: var(--gold); flex-shrink: 0; }
+.skill-item:hover { color: var(--text-primary); }
+
+/* --- Education Section --- */
+.education-section { padding: var(--section-pad) 0; background: var(--bg); }
+
+.edu-card {
+    display: flex; gap: 32px;
+    padding: 44px;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    position: relative; overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+.edu-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(to bottom, var(--gold), rgba(168, 121, 42, 0.2)); }
+.edu-icon { width: 64px; height: 64px; background: rgba(168, 121, 42, 0.08); border: 1px solid rgba(168, 121, 42, 0.22); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--gold); flex-shrink: 0; }
+.edu-header { display: flex; align-items: center; gap: 20px; margin-bottom: 14px; flex-wrap: wrap; }
+.edu-degree { font-family: var(--font-display); font-size: 1.6rem; font-weight: 400; color: var(--text-primary); }
+.edu-spec { display: inline-block; padding: 5px 14px; background: rgba(168, 121, 42, 0.07); border: 1px solid rgba(168, 121, 42, 0.2); border-radius: 50px; font-size: 0.75rem; color: var(--gold); }
+.edu-institution { font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.edu-institution i { color: var(--gold); font-size: 0.75rem; }
+.edu-description { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.85; }
+
+/* --- Animations --- */
+@keyframes fadeSlideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeSlideDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+
+/* --- Responsive --- */
+@media (max-width: 900px) { .profile-grid { grid-template-columns: 1fr; gap: 40px; } .profile-card { position: static; } .skills-grid { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .edu-card { flex-direction: column; gap: 20px; } .edu-header { flex-direction: column; align-items: flex-start; gap: 10px; } }

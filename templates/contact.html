@@ -1,0 +1,250 @@
+{% extends "base.html" %}
+{% block title %}Contact — Nompilo{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Contact Hero -->
+<section class="contact-hero">
+    <div class="section-container">
+        <span class="section-label">Get In Touch</span>
+        <h1 class="contact-hero-title">
+            Let's <span class="gold-text">Connect</span>
+        </h1>
+        <p class="contact-hero-sub">
+            I'm currently open to new opportunities, collaborations, and conversations. 
+            Whether you have a role in mind or just want to connect — I'd love to hear from you.
+        </p>
+    </div>
+</section>
+
+<!-- Contact Body -->
+<section class="contact-body">
+    <div class="section-container-wide">
+
+        <!-- Success/Error Messages -->
+        <div id="formMessage" class="form-message" style="display: none;"></div>
+
+        <!-- Main Contact Form -->
+        <div class="contact-form-wrapper">
+            <div class="form-intro">
+                <div class="form-intro-icon">
+                    <i class="fas fa-paper-plane"></i>
+                </div>
+                <div class="form-intro-text">
+                    <h2>Send Me a Message</h2>
+                    <p>Fill out the form below and I'll get back to you as soon as possible.</p>
+                </div>
+            </div>
+
+            <form id="contactForm" class="contact-form-modern">
+                <div class="form-row-double">
+                    <div class="form-field">
+                        <label for="name">Full Name <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user"></i>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                placeholder="Your full name" 
+                                required
+                            />
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope"></i>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="your.email@example.com" 
+                                required
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label for="subject">Subject</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-tag"></i>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            name="subject" 
+                            placeholder="What is this regarding?" 
+                        />
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label for="message">Message <span class="required">*</span></label>
+                    <div class="textarea-wrapper">
+                        <i class="fas fa-comment"></i>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            rows="8" 
+                            placeholder="Tell me about your opportunity, project, or just say hello..."
+                            required
+                        ></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Send Message</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- Contact Info Grid Below Form -->
+        <div class="contact-info-grid">
+            <div class="info-box">
+                <div class="info-box-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <a href="mailto:{{ data.contact.email }}" class="info-link">{{ data.contact.email }}</a>
+                <p class="info-note">I'll respond within 24 hours</p>
+            </div>
+
+            <div class="info-box">
+                <div class="info-box-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Location</h3>
+                <p class="info-value">South Africa</p>
+                <p class="info-note">Available for remote work</p>
+            </div>
+
+            <div class="info-box">
+                <div class="info-box-icon status-icon">
+                    <i class="fas fa-circle-dot"></i>
+                </div>
+                <h3>Status</h3>
+                <p class="info-value status-badge">Open to Opportunities</p>
+                <p class="info-note">Actively seeking new roles</p>
+            </div>
+
+            <div class="info-box social-box">
+                <div class="info-box-icon">
+                    <i class="fas fa-share-nodes"></i>
+                </div>
+                <h3>Connect With Me</h3>
+                <div class="social-links-inline">
+                    {% if data.contact.github %}
+                    <a href="{{ data.contact.github }}" target="_blank" rel="noopener noreferrer" class="social-btn github" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    {% endif %}
+                    {% if data.contact.linkedin %}
+                    <a href="{{ data.contact.linkedin }}" target="_blank" rel="noopener noreferrer" class="social-btn linkedin" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    {% endif %}
+                    {% if data.contact.instagram %}
+                    <a href="{{ data.contact.instagram }}" target="_blank" rel="noopener noreferrer" class="social-btn instagram" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    {% endif %}
+                </div>
+                <p class="info-note">Let's stay connected</p>
+            </div>
+        </div>
+
+        <!-- What I'm Looking For Section -->
+        <div class="looking-for-section">
+            <h3><i class="fas fa-bullseye"></i> What I'm Looking For</h3>
+            <div class="looking-for-grid">
+                <div class="looking-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Junior Business Analyst roles</span>
+                </div>
+                <div class="looking-item">
+                    <i class="fas fa-diagram-project"></i>
+                    <span>Systems Analysis positions</span>
+                </div>
+                <div class="looking-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Graduate ICT programmes</span>
+                </div>
+                <div class="looking-item">
+                    <i class="fas fa-handshake"></i>
+                    <span>Collaborative projects</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Contact form submission
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const form = this;
+    const submitBtn = document.getElementById('submitBtn');
+    const formMessage = document.getElementById('formMessage');
+    const formData = new FormData(form);
+    
+    // Disable button and show loading state
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Sending...</span>';
+    formMessage.style.display = 'none';
+    
+    try {
+        const response = await fetch('/send-message', {
+            method: 'POST',
+            body: formData
+        });
+        
+        const data = await response.json();
+        
+        // Show message
+        formMessage.style.display = 'block';
+        formMessage.className = 'form-message ' + (data.success ? 'success' : 'error');
+        formMessage.innerHTML = `
+            <i class="fas fa-${data.success ? 'check-circle' : 'exclamation-circle'}"></i>
+            <div>
+                <strong>${data.success ? 'Message Sent!' : 'Error'}</strong>
+                <p>${data.message}</p>
+            </div>
+        `;
+        
+        // Reset form on success
+        if (data.success) {
+            form.reset();
+            // Scroll to message
+            formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        
+    } catch (error) {
+        formMessage.style.display = 'block';
+        formMessage.className = 'form-message error';
+        formMessage.innerHTML = `
+            <i class="fas fa-exclamation-circle"></i>
+            <div>
+                <strong>Error</strong>
+                <p>An error occurred. Please try again or email me directly.</p>
+            </div>
+        `;
+    } finally {
+        // Re-enable button
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>Send Message</span>';
+    }
+});
+</script>
+{% endblock %}
