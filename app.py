@@ -63,9 +63,9 @@ portfolio_data = {
     ],
     "contact": {
         "email": "prettynompilo6@gmail.com",  
-        "linkedin": "https://www.linkedin.com/in/yourprofile",  # Add your LinkedIn URL
-        "github": "https://github.com/yourusername",  # Add your GitHub username
-        "instagram": "https://instagram.com/yourusername"  # Add your Instagram username
+        "linkedin": "https://www.linkedin.com/in/nompilo-pretty-mbatha-340233261/",  # Add your LinkedIn URL
+        "github": "https://github.com/prettympilo6",  # Add your GitHub username
+        "instagram": "https://www.instagram.com/nompiloprettymbatha/"  # Add your Instagram username
     }
 }
 
