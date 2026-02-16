@@ -2,7 +2,7 @@
 
 A modern, elegant portfolio website showcasing ICT skills, projects, and professional experience. Built with Flask (Python), HTML, CSS, and JavaScript with a beautiful grey-white light theme.
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-success?style=for-the-badge)](https://my-portfolio-sigma-self.vercel.app)
+[![Live Demo](https://my-portfolio-ten-tau-67.vercel.app/)](https://my-portfolio-ten-tau-67.vercel.app/)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-3.0+-lightgrey?style=for-the-badge&logo=flask)](https://flask.palletsprojects.com/)
 [![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com)
@@ -116,9 +116,6 @@ app.config['MAIL_PASSWORD'] = 'your-a
 - ✅ Timestamp on submissions
 
 
-## 🌐 Deployment Guide
-
-### Deploy to Vercel
 
 #### 1. Push to GitHub
 
@@ -185,7 +182,7 @@ For production deployment on Vercel:
 | Variable | Description | Example |
 |----------|-------------|---------|
 | `MAIL_USERNAME` | Gmail address for sending emails | `prettynompilo6@gmail.com` |
-| `MAIL_PASSWORD` | Gmail app password (not regular password)
+| `MAIL_PASSWORD` | Gmail app password (not regular password) | Don't show |
 
 **⚠️ Important:**
 - Never commit passwords to Git
@@ -193,9 +190,6 @@ For production deployment on Vercel:
 - Generate Gmail App Password from Google Account settings
 
 ---
-
-## 🎯 Features Breakdown
-
 
 ## 🐛 Troubleshooting
 
