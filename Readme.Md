@@ -327,7 +327,7 @@ This portfolio is for personal use. Feel free to use as inspiration for your own
 
 ---
 
-**⭐ If you like this portfolio, give it a star on GitHub!**
+**⭐if you like this portfolio send a message on the live link**
 
 **Made with ❤️ by Nompilo**
 
