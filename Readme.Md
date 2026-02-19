@@ -329,6 +329,6 @@ This portfolio is for personal use. Feel free to use as inspiration for your own
 
 **⭐if you like this portfolio send a message on the live link**
 
-**Made with ❤️ by Nompilo**
+**Made with ❤️ by Nompilo Mbatha**
 
 *Last Updated: February 2025*
