@@ -2,7 +2,7 @@
 
 A modern, elegant portfolio website showcasing ICT skills, projects, and professional experience. Built with Flask (Python), HTML, CSS, and JavaScript with a beautiful grey-white light theme.
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-success?style=for-the-badge)](https://my-portfolio-ten-tau-67.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-success?style=for-the-badge)](https://mpiloportfolio.vercel.app/)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-3.0+-lightgrey?style=for-the-badge&logo=flask)](https://flask.palletsprojects.com/)
 [![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com)
@@ -11,7 +11,7 @@ A modern, elegant portfolio website showcasing ICT skills, projects, and profess
 
 ## 🚀 Live Website
 
-**Portfolio URL:** [https://my-portfolio-ten-tau-67.vercel.app/](https://my-portfolio-ten-tau-67.vercel.app/)
+**Portfolio URL:** [https://mpiloportfolio.vercel.app/]
 
 
 ---
