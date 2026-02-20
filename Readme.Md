@@ -271,7 +271,7 @@ For production deployment on Vercel:
 **Portfolio Owner:** Nompilo  
 **Email:** prettynompilo6@gmail.com  
 **GitHub:** [@prettympilo6](https://github.com/prettympilo6)  
-**Live Site:** [https://my-portfolio-sigma-self.vercel.app](https://my-portfolio-sigma-self.vercel.app)
+**Live Site:** [https://mpiloportfolio.vercel.app/]
 
 ---
 
